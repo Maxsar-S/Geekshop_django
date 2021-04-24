@@ -9,3 +9,6 @@ def index(request):
 
 def products(request):
     return render(request, 'mainapp/products.html')
+
+def test_context(request):
+    return render(request, 'mainapp/test_context.html')
