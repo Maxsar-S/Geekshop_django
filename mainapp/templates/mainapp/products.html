@@ -14,11 +14,9 @@
 
                 <h1 class="my-4">GeekShop</h1>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Новинки</a>
-                    <a href="#" class="list-group-item">Одежда</a>
-                    <a href="#" class="list-group-item">Обувь</a>
-                    <a href="#" class="list-group-item">Аксессуары</a>
-                    <a href="#" class="list-group-item">Подарки</a>
+                    {% for category in categories %}
+                        <a href="#" class="list-group-item">{{ category.name }}</a>
+                    {% endfor %}
                 </div>
 
             </div>
@@ -57,27 +55,33 @@
                 </div>
 
                 <div class="row">
+
                     {% for product in products %}
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
                                 <a href="#">
                                     <img class="card-img-top"
-                                         src="{% static product.img %}"
+                                         src="/media/{{ product.image }}"
                                          alt="">
                                 </a>
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="#">{{product.name}}</a>
+                                        <a href="#">{{ product.name }}</a>
                                     </h4>
-                                    <h5>{{product.price}} руб.</h5>
-                                    <p class="card-text">{{product.description}}</p>
+                                    <h5>{{ product.price }} руб.</h5>
+                                    <p class="card-text">{{ product.description }}</p>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <button type="button" class="btn btn-outline-success">Отправить в корзину</button>
+                                    <a href="{% url 'baskets:basket_add' product.id %}">
+                                        <button type="button" class="btn btn-outline-success">
+                                            Отправить в корзину
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
+
                 </div>
 
                 <nav aria-label="Page navigation example">
@@ -104,7 +108,7 @@
 {% block footer %}
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white"> Copyright &copy; GeekShop 2021, время сейчас: {{current_time|time:"H\ч i\м"}}</p>
+            <p class="m-0 text-center text-white">Copyright &copy; GeekShop 2021</p>
         </div>
     </footer>
 {% endblock %}
