@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect
+
 from django.contrib import auth, messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 from authapp.forms import UserLoginForm, UserRegisterForm, UserProfileForm
 from basketapp.models import Basket
-
 
 def login(request):
     if request.method == 'POST':
@@ -34,6 +34,7 @@ def register(request):
         form = UserRegisterForm()
     context = {'title': 'GeekShop - Регистрация', 'form': form}
     return render(request, 'authapp/register.html', context)
+
 
 
 @login_required
