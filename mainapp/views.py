@@ -5,7 +5,7 @@ from mainapp.models import Product, ProductCategory
 
 def index(request):
     context = {'title': 'GeekShop'}
-    return render(request, 'mainapp/index.html', context)
+    return render(request, 'mainapp/base.html', context)
 
 
 def products(request):
