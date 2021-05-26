@@ -67,12 +67,6 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
 
 
-
-
-
-
-
-
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
