@@ -25,30 +25,14 @@ def login(request):
     context = {'title': 'GeekShop - Авторизация', 'form': form}
     return render(request, 'authapp/login.html', context)
 
-def login(request):
-    if request.method == 'POST':
-        form = UserLoginForm(data=request.POST)
-        if form.is_valid():
-            username = request.POST['username']
-            password = request.POST['password']
-            user = auth.authenticate(username=username, password=password)
-            if user and user.is_active:
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('index'))
-    else:
-        form = UserLoginForm()
-    context = {'title': 'GeekShop - Авторизация', 'form': form}
-    return render(request, 'authapp/login.html', context)
-
 class RegisterCreateView(CreateView):
-
     model = User
     template_name = 'authapp/register.html'
     form_class = UserRegisterForm
     success_url = reverse_lazy('users:login')
     def get_context_data(self, **kwargs):
         context = super(RegisterCreateView, self).get_context_data(**kwargs)
-        context['title'] = 'GeekShop Admin - Редактирование пользователя'
+        context['title'] = 'GeekShop Admin - Регистрация пользователя'
         return context
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
