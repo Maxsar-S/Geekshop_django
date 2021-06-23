@@ -1,0 +1,3 @@
+
+def basket(request):
+    return {}
