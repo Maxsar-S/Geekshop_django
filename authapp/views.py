@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
 
 from authapp.models import User
-from authapp.forms import UserLoginForm, UserRegisterForm, UserProfileForm
+from authapp.forms import UserLoginForm, UserRegisterForm, UserProfileForm, UserProfileEditForm
 from basketapp.models import Basket
 
 def login(request):
@@ -55,6 +55,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         context['title'] = 'GeekShop Admin - Личный кабинет'
         context['baskets'] = Basket.objects.filter(user=self.object.pk)
         return context
+
 
 
 def logout(request):
