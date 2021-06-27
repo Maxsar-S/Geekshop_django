@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import json
 import os
 from pathlib import Path
 
@@ -159,6 +159,7 @@ DOMAIN_NAME = 'http://localhost:8000'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 )
 
 SOCIAL_AUTH_PIPELINE = (
@@ -173,6 +174,10 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = load_dotenv(dotenv_path=Path('.')/'.env')
-SOCIAL_AUTH_VK_OAUTH2_SECRET = load_dotenv(dotenv_path=Path('.')/'.env')
+with open('env.json', "r") as json_file:
+    json_data = json.load(json_file)
+    SOCIAL_AUTH_VK_OAUTH2_KEY = json_data["SOCIAL_AUTH_VK_OAUTH2_KEY"]
+    SOCIAL_AUTH_VK_OAUTH2_SECRET = json_data["SOCIAL_AUTH_VK_OAUTH2_SECRET"]
+    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'XXXXXXXX'
+    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXXXXXXXX'
 

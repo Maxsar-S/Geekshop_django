@@ -4,3 +4,4 @@ media
 __pycache__/
 django_3.2
 .env
+env.json
