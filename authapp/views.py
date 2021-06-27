@@ -42,21 +42,24 @@ def register(request):
     context = {'title': 'GeekShop - Регистрация', 'form': form}
     return render(request, 'authapp/register.html', context)
 
-class ProfileUpdateView(LoginRequiredMixin, UpdateView):
-    model = User
-    template_name = 'authapp/profile.html'
-    form_class = UserProfileForm
-
-    def get_success_url(self):
-        return reverse('users:profile', args=[self.object.pk])
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(ProfileUpdateView, self).get_context_data(**kwargs)
-        context['title'] = 'GeekShop Admin - Личный кабинет'
-        context['baskets'] = Basket.objects.filter(user=self.object.pk)
-        return context
-
-
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        form = UserProfileForm(data=request.POST, files=request.FILES, instance=request.user)
+        profile_form = UserProfileEditForm(data=request.POST, instance=request.user.userprofile)
+        if form.is_valid() and profile_form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('users:profile'))
+    else:
+        form = UserProfileForm(instance=request.user)
+        profile_form = UserProfileEditForm(instance=request.user.userprofile)
+    context = {
+        'title': 'GeekShop - Личный кабинет',
+        'form': form,
+        'profile_form': profile_form,
+        'baskets': Basket.objects.filter(user=request.user),
+    }
+    return render(request, 'authapp/profile.html', context)
 
 def logout(request):
     auth.logout(request)
