@@ -46,6 +46,7 @@
             <div class="card-footer text-center">
                 <div class="small"><a href="{% url 'users:register' %}">Нужен аккаунт? Зарегистрируйся!</a></div>
                 <div class="small"><a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">Вход через vk.com</a></div>
+                <div class="small"><a href="{% url 'social:begin' 'google-oauth2' %}?next=/">Вход через google+</a></div>
             </div>
         </div>
     </div>
