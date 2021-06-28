@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'basketapp',
     'adminapp',
     'social_django',
+    'orderapp',
 ]
 
 MIDDLEWARE = [
@@ -168,10 +169,10 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.auth_allowed',
     'social_core.pipeline.social_auth.social_user',
     'social_core.pipeline.user.create_user',
-    'authapp.pipeline.save_user_profile',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
+    'authapp.pipeline.save_user_profile',
 )
 
 with open('env.json', "r") as json_file:
