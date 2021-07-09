@@ -8,6 +8,10 @@
        <a href="{% url 'order:delete' object.pk %}">удалить</a>
    </button>
 {% endif %}
+
+{% if object.status == 'STP' %}
+    <a href="#" class="btn btn-info btn-block">Оплатить</a>
+{% endif %}
 <a href="{% url 'order:list' %}">
     <button class="btn btn-info btn-block" >
 
