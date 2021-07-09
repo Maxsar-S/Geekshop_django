@@ -10,6 +10,8 @@ urlpatterns = [
     path('update/<int:pk>/', orderapp.OrderUpdate.as_view(), name='update'),
     path('read/<int:pk>/', orderapp.OrderRead.as_view(), name='read'),
     path('delete/<int:pk>/', orderapp.OrderDelete.as_view(), name='delete'),
-    path('forming/complete/<int:pk>/', orderapp.forming_complete, name='forming_complete')
+    path('forming/complete/<int:pk>/', orderapp.forming_complete, name='forming_complete'),
 
+
+    path('payment/result/', orderapp.payment_result, name='payment_result'),
 ]
