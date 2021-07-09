@@ -18,6 +18,12 @@
     <!-- Custom styles for this template -->
     {% block css %} {% endblock %}
 
+    {% block js %}
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.formset.js' %}"></script>
+        <script src="{% static 'js/orders_script.js' %}"></script>
+    {% endblock %}
+
 </head>
 
 <body>
@@ -70,13 +76,12 @@
 {% block footer %} {% endblock %}
 
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'js/orders_script.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!--<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
 
 
 <!-- FontAwesome script -->
-<script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>
+<!--<script src="{% static 'vendor/fontawesome/fontawesome-icons.js' %}" crossorigin="anonymous"></script>-->
 
 </body>
 

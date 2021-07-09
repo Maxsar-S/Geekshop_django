@@ -13,10 +13,11 @@ window.onload = function () {
 
     for(var i=0; i<total_forms; i++){
         _quantity = parseInt($('input[name=orderitems-'+i+'-quantity]').val());
-        _price = parseFloat($('orderitems-'+i+'-price').text().replace(',', '.'));
+        _price = parseFloat($('.orderitems-' + i + '-price').text().replace(',', '.'));
 
         quantity_arr[i] = _quantity;
         if(_price) {
+
             price_arr[i] = _price;
         } else {
             price_arr[i] = 0;
@@ -24,7 +25,9 @@ window.onload = function () {
 
     }
 
-    $('order_form').on(types="change", selector="input[type=number]", function(){
+    console.log(price_arr)
+
+    $('.order_form').on(types="change", selector="input[type=number]", function(){
         var target = event.target
         orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-quantity'));
         if(price_arr[orderitem_num]){
@@ -37,9 +40,9 @@ window.onload = function () {
 
     });
 
-    $('order_form').on(types="change", selector="input[type=checkbox]", function() {
+    $('.order_form').on(types="change", selector="input[type=checkbox]", function() {
         var target = event.target;
-        orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-quantity'));
+        orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-DELETE'));
         if (target.checked) {
             delta_quantity = -quantity_arr[orderitem_num];
 
@@ -58,6 +61,21 @@ window.onload = function () {
         $('.order_total_quantity').text(order_total_quantity.toString());
         $('.order_total_cost').text(order_total_price.toString());
 
-
     }
+
+    $('.formset_row').formset({
+        addText: 'Добавить продукт',
+        deleteText: 'Удалить',
+        prefix: 'orderitems',
+        removed: deleteOrderItem,
+    })
+
+    function deleteOrderItem(row){
+        var target_name = row[0].querySelector('input[type=number]').name
+        orderitem_num = parseInt(target_name.replace('orderitems-', '').replace('-quantity'));
+
+        delta_quantity = -quantity_arr[orderitem_num];
+        orderSummaryUpdate(price_arr[orderitem_num], delta_quantity);
+    }
+
 }
