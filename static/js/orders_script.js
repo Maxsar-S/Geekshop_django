@@ -72,10 +72,51 @@ window.onload = function () {
 
     function deleteOrderItem(row){
         var target_name = row[0].querySelector('input[type=number]').name
-        orderitem_num = parseInt(target_name.replace('orderitems-', '').replace('-quantity'));
+        orderitem_num = parseInt(target_name.replace('orderitems-', '').replace('-quantity', ''));
 
         delta_quantity = -quantity_arr[orderitem_num];
         orderSummaryUpdate(price_arr[orderitem_num], delta_quantity);
     }
 
+    $('.order_form select').change(function (){
+        var target = event.target;
+        orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-product', ''));
+
+        var orderItem_product_pk = target.options[target.selectedIndex].value;
+
+        if(orderItem_product_pk){
+
+            $.ajax(url={
+                url: '/order/product/' + orderItem_product_pk + '/price/',
+                success: function(data){
+                    if(data.price){
+                        price_arr[orderitem_num] = parseFloat(data.price);
+                        if(isNaN(quantity_arr[orderitem_num])){
+                            quantity_arr[orderitem_num] = 0;
+                        }
+                        var price_html = '<span class="orderItems-' + orderitem_num + 'price">' + data.price.toString().replace('.' , ',') + '</span> руб.';
+                        var cur_tr = $('.order_form table').find('tr:eq(' + (orderitem_num + 1) + ')');
+                        cur_tr.find('td:eq(2)').html(price_html);
+                        orderSummaryRecalc();
+                    }
+                }
+            })
+        }
+
+    })
+
+    function orderSummaryRecalc(){
+        order_total_cost = 0;
+        order_total_quantity = 0;
+        for(var i = 0; i < total_forms; i++){
+            order_total_quantity += quantity_arr[i];
+            order_total_cost += price_arr[i] * quantity_arr[i];
+        }
+        $('.order_total_quantity').html(order_total_quantity.toString());
+        $('.order_total_cost').html(order_total_cost.toFixed(2).toString());
+    }
+
+
+
+//
 }
