@@ -6,7 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.decorators import method_decorator
 
 from authapp.models import User
-from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm
+from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, ProductEditForm, ProductCategoryEditForm
+from mainapp.models import ProductCategory, Product
 
 
 @user_passes_test(lambda u: u.is_superuser)
@@ -62,3 +63,94 @@ class UserDeleteView(DeleteView):
 
 
 
+
+class CategoriesListView(ListView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-categories-read.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CategoriesListView, self).dispatch(request, *args, **kwargs)
+
+
+class CategoriesCreateView(CreateView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-categories-create.html'
+    form_class = ProductCategoryEditForm
+    success_url = reverse_lazy('admin_staff:admin-categories-read')
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CategoriesCreateView, self).dispatch(request, *args, **kwargs)
+
+
+class CategoriesUpdateView(UpdateView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-categories-update-delete.html'
+    success_url = reverse_lazy('admin_staff:admin-categories-read')
+    form_class = ProductCategoryEditForm
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoriesUpdateView, self).get_context_data(**kwargs)
+        context['title'] = 'GeekShop Admin - Редактирование категории'
+        return context
+
+
+class CategoriesDeleteView(DeleteView):
+    model = ProductCategory
+    template_name = 'adminapp/admin-categories-update-delete.html'
+    success_url = reverse_lazy('admin_staff:admin-categories-read')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        return HttpResponseRedirect(success_url)
+
+
+
+
+
+
+class ProductListView(ListView):
+    model = Product
+    template_name = 'adminapp/admin-products-read.html'
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super(ProductListView, self).dispatch(request, *args, **kwargs)
+
+
+class ProductCreateView(CreateView):
+    model = Product
+    template_name = 'adminapp/admin-products-create.html'
+    form_class = ProductEditForm
+    success_url = reverse_lazy('admin_staff:admin-products-read')
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super(ProductCreateView, self).dispatch(request, *args, **kwargs)
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    template_name = 'adminapp/admin-products-update-delete.html'
+    success_url = reverse_lazy('admin_staff:admin-products-read')
+    form_class = ProductEditForm
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductUpdateView, self).get_context_data(**kwargs)
+        context['title'] = 'GeekShop Admin - Редактирование категории'
+        return context
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'adminapp/admin-products-update-delete.html'
+    success_url = reverse_lazy('admin_staff:admin-products-read')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        return HttpResponseRedirect(success_url)
