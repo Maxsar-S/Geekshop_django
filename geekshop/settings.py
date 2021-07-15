@@ -88,21 +88,21 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'geekshop',
-        'USER': 'postgres',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'geekshop',
+#         'USER': 'postgres',
+#     }
+# }
 
 
 # Password validation
@@ -151,11 +151,11 @@ AUTH_USER_MODEL = 'authapp.User'
 
 LOGIN_URL = '/users/login/'
 
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_PORT = os.getenv('EMAIL_PORT')
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')
+EMAIL_HOST = "sntp.yandex.ru"
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "albarannikoff@yandex.ru"
+EMAIL_HOST_PASSWORD = "5193ljv49875193"
+EMAIL_USE_SSL = True
 
 #EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
 

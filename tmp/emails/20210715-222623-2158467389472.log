@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: belka@mail.ru
+Date: Thu, 15 Jul 2021 19:26:23 -0000
+Message-ID: <162637718316.6964.14446543241687960416@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/belka@mail.ru/e2ed0b424f1d2138a1d7eac2be4fb0eeaa3ab215/
+-------------------------------------------------------------------------------

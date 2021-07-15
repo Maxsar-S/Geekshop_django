@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: babaka@maol.ru
+Date: Thu, 15 Jul 2021 19:51:26 -0000
+Message-ID: <162637868684.6780.18014463809926103290@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/babaka@maol.ru/21c8a41d7bd44db0ec3d36d9a6f6ba7dda51eea6/
+-------------------------------------------------------------------------------

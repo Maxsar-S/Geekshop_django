@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: sasda@ivmvm.rr
+Date: Wed, 14 Jul 2021 14:28:04 -0000
+Message-ID: <162627288499.3736.11420585067687100673@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/sasda@ivmvm.rr/d5857617e9973e6ed3ab0a213d82d7b0cb74dce4/
+-------------------------------------------------------------------------------
