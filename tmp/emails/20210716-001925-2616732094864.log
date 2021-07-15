@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: boba@mail.com
+Date: Thu, 15 Jul 2021 21:19:25 -0000
+Message-ID: <162638396556.17324.8666175747759198841@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/boba@mail.com/3fa1573279ac6460c25025267b95315ae9ea3b87/
+-------------------------------------------------------------------------------
