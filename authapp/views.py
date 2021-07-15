@@ -76,16 +76,11 @@ def send_verify_link(user):
 
 def verify(request, email, key):
     user = User.objects.filter(email=email).first()
+    if user and user.activation_key == key and user.is_activation_key_expired:
+            user.is_active = True
+            user.activation_key = ''
+            user.activation_key_created = None
+            user.save()
+            auth.login(request, user)
 
-    context = {'email': 'nothing'}
-    context['expired'] = user.is_activation_key_expired
-    if user and user.activation_key == key and not user.is_activation_key_expired:
-
-        user.is_active = True
-        context['check'] = 'OK'
-        user.activation_key = ''
-        user.activation_key_created = None
-        user.save()
-        auth.login(request, user)
-
-        return render(request, 'authapp/verify.html', context)
+    return render(request, 'authapp/verify.html')

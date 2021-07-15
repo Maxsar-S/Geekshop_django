@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: sdaf@asd.faedsf
+Date: Thu, 15 Jul 2021 21:06:01 -0000
+Message-ID: <162638316169.16424.2731012362367269501@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/sdaf@asd.faedsf/37b343c46d16f26e9010567fecb831a079694a3e/
+-------------------------------------------------------------------------------

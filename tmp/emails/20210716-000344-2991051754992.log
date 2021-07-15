@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: falen@fale.fel
+Date: Thu, 15 Jul 2021 21:03:44 -0000
+Message-ID: <162638302463.8212.5745236920901631397@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/falen@fale.fel/9e79ee65873babe5e370a478f2e8d0ec83a7e9ff/
+-------------------------------------------------------------------------------
