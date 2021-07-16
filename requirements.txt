@@ -2,6 +2,8 @@ Django==3.2
 psycopg2-binary
 Pillow==8.2.0
 social-auth-app-django==4.0.0
+django-debug-toolbar==3.2.1
+django-debug-toolbar-template-profiler
 
 appdirs==1.4.4
 asgiref==3.3.4
