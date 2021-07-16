@@ -5,3 +5,4 @@ __pycache__/
 django_3.2
 .env
 env.json
+siege_text.txt
