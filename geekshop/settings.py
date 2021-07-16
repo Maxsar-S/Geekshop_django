@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'template_profiler_panel',
+    'django_extensions',
 
 ]
 
@@ -65,7 +66,9 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 if DEBUG:
     def show_toolbar(request):
@@ -177,9 +180,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
 # )
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
