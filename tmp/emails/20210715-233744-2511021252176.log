@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: doge@pom.ru
+Date: Thu, 15 Jul 2021 20:37:44 -0000
+Message-ID: <162638146403.19000.2120173952796799774@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/doge@pom.ru/2280511de87400b378d290a512985e6219704910/
+-------------------------------------------------------------------------------

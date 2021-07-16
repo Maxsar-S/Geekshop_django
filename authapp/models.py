@@ -13,8 +13,8 @@ class User(AbstractUser):
 
     def is_activation_key_expired(self):
         if now() < self.activation_key_created + timedelta(hours=48):
-            return False
-        return True
+            return True
+        return False
 
 class UserProfile(models.Model):
     MALE = 'M'

@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: hoody@boobuy.com
+Date: Thu, 15 Jul 2021 21:14:11 -0000
+Message-ID: <162638365107.10588.13238262504446596981@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/hoody@boobuy.com/00070f95a09906bd0152735d55d04a5b6299389e/
+-------------------------------------------------------------------------------

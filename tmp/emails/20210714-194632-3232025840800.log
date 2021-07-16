@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: alekseibannikov@mail.ru
+Date: Wed, 14 Jul 2021 16:46:32 -0000
+Message-ID: <162628119274.8936.517248192443795167@DESKTOP-L4VDJ9C.Home>
+
+Your link for account activation: http://localhost:8000/users/verify/alekseibannikov@mail.ru/a01dc1d6431d0a6fc8978131c5a9a4b59493dfa2/
+-------------------------------------------------------------------------------
