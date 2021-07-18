@@ -1,3 +1,221 @@
 http://127.0.0.1:8000/
 http://127.0.0.1:8000/products/
 http://127.0.0.1:8000/users/login/
+"siege" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+
+
+for internet
+
+[debug] browser.c:870 attempting connection to 134.0.115.97:80
+[debug] browser.c:885 creating new socket:     134.0.115.97:80
+[debug] browser.c:905 good socket connection:  134.0.115.97:80
+GET /static/debug_toolbar/css/toolbar.css HTTP/1.1
+Host: 134.0.115.97
+Cookie: SameSite=Lax
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: text/css
+Content-Length: 11461
+Last-Modified: Fri, 16 Jul 2021 14:47:50 GMT
+Connection: close
+ETag: "60f19c16-2cc5"
+Accept-Ranges: bytes
+
+
+[debug] browser.c:870 attempting connection to 134.0.115.97:80
+[debug] browser.c:885 creating new socket:     134.0.115.97:80
+[debug] browser.c:905 good socket connection:  134.0.115.97:80
+GET /static/debug_toolbar/css/print.css HTTP/1.1
+Host: 134.0.115.97
+Cookie: SameSite=Lax
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: text/css
+Content-Length: 43
+Last-Modified: Fri, 16 Jul 2021 14:47:50 GMT
+Connection: close
+ETag: "60f19c16-2b"
+Accept-Ranges: bytes
+
+
+[debug] browser.c:870 attempting connection to 134.0.115.97:80
+[debug] browser.c:885 creating new socket:     134.0.115.97:80
+[debug] browser.c:905 good socket connection:  134.0.115.97:80
+GET /static/js/auth-admin.js HTTP/1.1
+Host: 134.0.115.97
+Cookie: SameSite=Lax
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: application/javascript
+Content-Length: 781
+Last-Modified: Mon, 12 Jul 2021 05:06:01 GMT
+Connection: close
+ETag: "60ebcdb9-30d"
+Accept-Ranges: bytes
+
+
+[debug] browser.c:870 attempting connection to cdn.jsdelivr.net:443
+[debug] browser.c:885 creating new socket:     cdn.jsdelivr.net:443
+[debug] browser.c:905 good socket connection:  cdn.jsdelivr.net:443
+GET /npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js HTTP/1.1
+Host: cdn.jsdelivr.net
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: application/javascript; charset=utf-8
+Content-Length: 21785
+Connection: close
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: *
+Timing-Allow-Origin: *
+Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+Cross-Origin-Resource-Policy: cross-origin
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+ETag: W/"148b8-qycDEVlyTiQh9v9ccPSOZXq+nTk"
+Content-Encoding: gzip
+Age: 7294844
+X-Served-By: cache-fra19132-FRA, cache-bma1647-BMA
+X-Cache: HIT, HIT
+Vary: Accept-Encoding
+CF-Cache-Status: HIT
+Accept-Ranges: bytes
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 66fc540bbcb63aa7-DME
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+
+[debug] browser.c:870 attempting connection to code.jquery.com:443
+[debug] browser.c:885 creating new socket:     code.jquery.com:443
+[debug] browser.c:905 good socket connection:  code.jquery.com:443
+GET /jquery-3.5.1.slim.min.js HTTP/1.1
+Host: code.jquery.com
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Connection: close
+Content-Encoding: gzip
+Content-Length: 24606
+Content-Type: application/javascript; charset=utf-8
+Last-Modified: Mon, 04 May 2020 23:02:39 GMT
+Accept-Ranges: bytes
+Server: nginx
+ETag: W/"5eb09f0f-11abc"
+Cache-Control: max-age=315360000
+Cache-Control: public
+Access-Control-Allow-Origin: *
+Vary: Accept-Encoding
+X-HW: 1626450019.dop213.am5.t,1626450019.cds126.am5.shn,1626450019.dop213.am5.t,1626450019.cds123.am5.c
+
+
+[debug] browser.c:870 attempting connection to cdnjs.cloudflare.com:443
+[debug] browser.c:885 creating new socket:     cdnjs.cloudflare.com:443
+[debug] browser.c:905 good socket connection:  cdnjs.cloudflare.com:443
+GET /ajax/libs/font-awesome/5.15.1/js/all.min.js HTTP/1.1
+Host: cdnjs.cloudflare.com
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: application/javascript; charset=utf-8
+Content-Length: 438089
+Connection: close
+Access-Control-Allow-Origin: *
+Cache-Control: public, max-age=30672000
+Content-Encoding: gzip
+ETag: "5f7b5b5f-123bd0"
+Last-Modified: Mon, 05 Oct 2020 17:43:59 GMT
+cf-cdnjs-via: cfworker/kv
+Cross-Origin-Resource-Policy: cross-origin
+Timing-Allow-Origin: *
+X-Content-Type-Options: nosniff
+cf-request-id: 0ac396c20b00008ec528abf000000001
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Vary: Accept-Encoding
+CF-Cache-Status: HIT
+Age: 2382109
+Expires: Wed, 06 Jul 2022 15:40:19 GMT
+Accept-Ranges: bytes
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=6rphqjhg%2BEPOiD7gnLR6zl%2Bc4dEf%2F9TxqEriYImoRbv3TfqWsFYosrPSLLLH1rlX4g9Apv%2BmuSN8dZr8tBXH6e0ajrhz5DjEHB2jWWYORHA6tpIXOxw86CsbCdVHGn7ddiDcHMHv"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Strict-Transport-Security: max-age=15780000
+Server: cloudflare
+CF-RAY: 66fc540d4d6816db-DME
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+
+[debug] browser.c:870 attempting connection to 134.0.115.97:80
+[debug] browser.c:885 creating new socket:     134.0.115.97:80
+[debug] browser.c:905 good socket connection:  134.0.115.97:80
+GET /static/css/auth-admin.css HTTP/1.1
+Host: 134.0.115.97
+Cookie: SameSite=Lax
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (pc-x86_64-linux-gnu) Siege/4.0.4
+Connection: close
+
+
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 16 Jul 2021 15:40:19 GMT
+Content-Type: text/css
+Content-Length: 202844
+Last-Modified: Mon, 12 Jul 2021 05:06:01 GMT
+Connection: close
+ETag: "60ebcdb9-3185c"
+Accept-Ranges: bytes
+
+
+
+Transactions:                    250 hits
+Availability:                 100.00 %
+Elapsed time:                   7.89 secs
+Data transferred:              50.42 MB
+Response time:                  0.02 secs
+Transaction rate:              31.69 trans/sec
+Throughput:                     6.39 MB/sec
+Concurrency:                    0.69
+Successful transactions:         250
+HTTP OK received:                245
+Failed transactions:               0
+Longest transaction:            0.29
+Shortest transaction:           0.00
