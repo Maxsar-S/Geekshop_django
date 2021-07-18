@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core.cache import cache
 
 from django.template.loader import render_to_string
-from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page, never_cache
 from django.http import JsonResponse
 
 from django.shortcuts import render, get_object_or_404
@@ -19,7 +19,7 @@ def index(request):
     context = {'title': 'GeekShop'}
     return render(request, 'mainapp/index.html', context)
 
-
+@never_cache
 def products(request, category_id=None, page=1):
     context = {'title': 'GeekShop - Каталог', 'categories': ProductCategory.objects.all()}
     products = Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()
