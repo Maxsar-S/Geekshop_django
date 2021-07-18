@@ -233,6 +233,19 @@ SOCIAL_AUTH_PIPELINE = (
     'authapp.pipeline.save_user_profile',
 )
 
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 120
+CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+LOW_CACHE = True
+
 with open('env.json', "r") as json_file:
     json_data = json.load(json_file)
     SOCIAL_AUTH_VK_OAUTH2_KEY = json_data["SOCIAL_AUTH_VK_OAUTH2_KEY"]
