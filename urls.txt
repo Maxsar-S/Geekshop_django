@@ -1,1 +1,4 @@
-http://192.168.0.98/order/update/2/
+http://134.0.115.97/
+http://134.0.115.97/products/
+http://134.0.115.97/products/2/
+http://134.0.115.97/users/login/
