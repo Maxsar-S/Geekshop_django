@@ -9,6 +9,7 @@ from authapp.models import User
 from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, ProductEditForm, ProductCategoryEditForm
 from mainapp.models import ProductCategory, Product
 
+from django.db.models import F
 
 @user_passes_test(lambda u: u.is_superuser)
 def index(request):
