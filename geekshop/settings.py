@@ -198,11 +198,14 @@ AUTH_USER_MODEL = 'authapp.User'
 
 LOGIN_URL = '/users/login/'
 
-EMAIL_HOST = "sntp.yandex.ru"
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "albarannikoff@yandex.ru"
-EMAIL_HOST_PASSWORD = "5193ljv49875193"
-EMAIL_USE_SSL = True
+with open('env.json', "r") as json_file:
+    json_data = json.load(json_file)
+
+EMAIL_HOST = json_data['EMAIL_HOST']
+EMAIL_PORT = json_data['EMAIL_PORT']
+EMAIL_HOST_USER = json_data['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = json_data['EMAIL_HOST_PASSWORD']
+EMAIL_USE_SSL = json_data['EMAIL_USE_SSL']
 
 #EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
 
@@ -249,10 +252,8 @@ CACHES = {
 
 LOW_CACHE = True
 
-with open('env.json', "r") as json_file:
-    json_data = json.load(json_file)
-    SOCIAL_AUTH_VK_OAUTH2_KEY = json_data["SOCIAL_AUTH_VK_OAUTH2_KEY"]
-    SOCIAL_AUTH_VK_OAUTH2_SECRET = json_data["SOCIAL_AUTH_VK_OAUTH2_SECRET"]
-    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = json_data["SOCIAL_AUTH_GOOGLE_OAUTH2_KEY"]
-    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = json_data["SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET"]
+SOCIAL_AUTH_VK_OAUTH2_KEY = json_data['SOCIAL_AUTH_VK_OAUTH2_KEY']
+SOCIAL_AUTH_VK_OAUTH2_SECRET = json_data['SOCIAL_AUTH_VK_OAUTH2_SECRET']
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = json_data['SOCIAL_AUTH_GOOGLE_OAUTH2_KEY']
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = json_data['SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET']
 
