@@ -95,6 +95,15 @@ class CategoriesUpdateView(UpdateView):
         context['title'] = 'GeekShop Admin - Редактирование категории'
         return context
 
+    def form_valid(self, form):
+        if 'discount' in form.cleaned_data:
+            discount = form.cleaned_data['discount']
+            if discount:
+                print(f'Применяется скидка {discount}% к товарам категории {self.object.name}')
+                self.object.product_set.update(price=F('price') * (1- discount/100))
+                db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
+
+
 
 class CategoriesDeleteView(DeleteView):
     model = ProductCategory
