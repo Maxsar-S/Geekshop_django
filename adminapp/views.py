@@ -10,6 +10,9 @@ from adminapp.forms import UserAdminRegisterForm, UserAdminProfileForm, ProductE
 from mainapp.models import ProductCategory, Product
 
 from django.db.models import F
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+from django.db import connection
 
 @user_passes_test(lambda u: u.is_superuser)
 def index(request):
