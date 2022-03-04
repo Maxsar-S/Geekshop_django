@@ -1,0 +1,11 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Account verify
+From: albarannikoff@yandex.ru
+To: asdqweqwe@fsdgjdf.tu
+Date: Thu, 22 Jul 2021 13:35:21 -0000
+Message-ID: <162696092189.16592.14299843567604659588@DESKTOP-L4VDJ9C>
+
+Your link for account activation: http://localhost:8000/users/verify/asdqweqwe@fsdgjdf.tu/70b29b562c51af5ff97ee23c81b2f864c1d0e306/
+-------------------------------------------------------------------------------
